@@ -272,7 +272,7 @@ namespace MemoryGame
                 timer1.Stop();
                 SoundPlayer sound = new SoundPlayer(Properties.Resources.level_completed);
                 sound.Play();
-                MessageBox.Show("Победивте!");
+                MessageBox.Show("Честито! Победивте!", "Победа");
                 if (wins < 2)
                 {
                     if (MessageBox.Show("Нова игра?", "Нова игра", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -329,6 +329,18 @@ namespace MemoryGame
         {
             timer1.Stop();
             Close();
+        }
+
+        private void паузаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled && !timer2.Enabled)
+            {
+                timer1.Stop();
+            }
+            else
+            {
+                timer1.Start();
+            }
         }
 
    }

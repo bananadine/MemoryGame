@@ -44,6 +44,7 @@
             this.играToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.крајToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.паузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,7 +165,8 @@
             // 
             this.играToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.новаToolStripMenuItem,
-            this.крајToolStripMenuItem});
+            this.крајToolStripMenuItem,
+            this.паузаToolStripMenuItem});
             this.играToolStripMenuItem.Name = "играToolStripMenuItem";
             this.играToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.играToolStripMenuItem.Text = "Игра";
@@ -172,16 +174,23 @@
             // новаToolStripMenuItem
             // 
             this.новаToolStripMenuItem.Name = "новаToolStripMenuItem";
-            this.новаToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.новаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.новаToolStripMenuItem.Text = "Нова";
             this.новаToolStripMenuItem.Click += new System.EventHandler(this.новаToolStripMenuItem_Click);
             // 
             // крајToolStripMenuItem
             // 
             this.крајToolStripMenuItem.Name = "крајToolStripMenuItem";
-            this.крајToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.крајToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.крајToolStripMenuItem.Text = "Крај";
             this.крајToolStripMenuItem.Click += new System.EventHandler(this.крајToolStripMenuItem_Click_1);
+            // 
+            // паузаToolStripMenuItem
+            // 
+            this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
+            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.паузаToolStripMenuItem.Text = "Пауза";
+            this.паузаToolStripMenuItem.Click += new System.EventHandler(this.паузаToolStripMenuItem_Click);
             // 
             // FirstLevel
             // 
@@ -234,6 +243,7 @@
         private System.Windows.Forms.ToolStripMenuItem играToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem новаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem крајToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem паузаToolStripMenuItem;
 
 
     }
