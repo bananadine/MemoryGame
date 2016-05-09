@@ -201,7 +201,7 @@ namespace MemoryGame
                 timer1.Stop();
                 SoundPlayer sound = new SoundPlayer(Properties.Resources.sad_trombone);
                 sound.Play();
-                if (MessageBox.Show("Нова игра?", "Изгуби!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                if (MessageBox.Show("Нова игра?", "Изгубивте!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                 {
                     timer1.Interval = 5000;
                     newGame();
@@ -210,7 +210,7 @@ namespace MemoryGame
                     Close();
             }
             Invalidate();
-            validateWin();
+            checkWin();
         }
 
         private void updateTime()
@@ -252,8 +252,6 @@ namespace MemoryGame
         {
             foreach (Frame f in frames)
             {
-                if (f != null)
-                {
                     if (f.isSelected || f.isGuessed)
                     {
                         f.open(e.Graphics);
@@ -262,13 +260,12 @@ namespace MemoryGame
                     {
                         f.close();
                     }
-                }
             }
         }
 
 
 
-        private void validateWin()
+        private void checkWin()
         {
             if (hits == (frames.Count) / 2)
             {
