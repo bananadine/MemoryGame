@@ -95,7 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Square.cs" />
+    <Compile Include="Frame.cs" />
     <EmbeddedResource Include="2x4.resx">
       <DependentUpon>2x4.cs</DependentUpon>
     </EmbeddedResource>
