@@ -42,10 +42,6 @@ namespace MemoryGame
             frames.Add(new Frame(this.pictureBox15, Properties.Resources.RedStar, Properties.Resources.QuestionMark, "RedStar"));
             frames.Add(new Frame(this.pictureBox16, Properties.Resources.RedStar,Properties.Resources.QuestionMark, "RedStar"));
 
-            foreach (Frame f in frames)
-            {
-                f.pictureBox.Click += new System.EventHandler(this.click);
-            }
             opened = 0;
             #endregion
             newGame();
@@ -53,6 +49,12 @@ namespace MemoryGame
 
         private void newGame()
         {
+
+            foreach (Frame f in frames)
+            {
+                f.pictureBox.Click += new System.EventHandler(this.click);
+            }
+
             timer1.Start();
             timer2.Start();
 
@@ -118,6 +120,10 @@ namespace MemoryGame
                 f2.isGuessed = true;
                 f1.isSelected = false;
                 f2.isSelected = false;
+                f1.pictureBox.Click -= new System.EventHandler(this.click);
+                f2.pictureBox.Click -= new System.EventHandler(this.click);
+                f1.pictureBox.Enabled = false;
+                f2.pictureBox.Enabled = false;
                 hits++;
                 canOpen = true;
 
