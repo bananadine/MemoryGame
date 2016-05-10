@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.lblTimeLeft = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -45,95 +37,30 @@
             this.новаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.крајToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.паузаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(31, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 110);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.Location = new System.Drawing.Point(186, 70);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 110);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.Location = new System.Drawing.Point(336, 70);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 110);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Location = new System.Drawing.Point(481, 70);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 110);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button5.Location = new System.Drawing.Point(31, 202);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 110);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.Location = new System.Drawing.Point(186, 202);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 110);
-            this.button6.TabIndex = 6;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button7.Location = new System.Drawing.Point(336, 202);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(116, 110);
-            this.button7.TabIndex = 7;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button8.Location = new System.Drawing.Point(481, 202);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 110);
-            this.button8.TabIndex = 8;
-            this.button8.UseVisualStyleBackColor = false;
             // 
             // lblTimeLeft
             // 
             this.lblTimeLeft.AutoSize = true;
             this.lblTimeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblTimeLeft.Location = new System.Drawing.Point(526, 33);
+            this.lblTimeLeft.Location = new System.Drawing.Point(484, 42);
             this.lblTimeLeft.Name = "lblTimeLeft";
             this.lblTimeLeft.Size = new System.Drawing.Size(71, 25);
             this.lblTimeLeft.TabIndex = 17;
@@ -157,7 +84,7 @@
             this.играToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(615, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(572, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -174,23 +101,95 @@
             // новаToolStripMenuItem
             // 
             this.новаToolStripMenuItem.Name = "новаToolStripMenuItem";
-            this.новаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.новаToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.новаToolStripMenuItem.Text = "Нова";
             this.новаToolStripMenuItem.Click += new System.EventHandler(this.новаToolStripMenuItem_Click);
             // 
             // крајToolStripMenuItem
             // 
             this.крајToolStripMenuItem.Name = "крајToolStripMenuItem";
-            this.крајToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.крајToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.крајToolStripMenuItem.Text = "Крај";
             this.крајToolStripMenuItem.Click += new System.EventHandler(this.крајToolStripMenuItem_Click_1);
             // 
             // паузаToolStripMenuItem
             // 
             this.паузаToolStripMenuItem.Name = "паузаToolStripMenuItem";
-            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.паузаToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.паузаToolStripMenuItem.Text = "Пауза";
             this.паузаToolStripMenuItem.Click += new System.EventHandler(this.паузаToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(33, 82);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(167, 82);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(301, 82);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox3.TabIndex = 21;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(435, 82);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox4.TabIndex = 22;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(435, 217);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox5.TabIndex = 26;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(301, 217);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox6.TabIndex = 25;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(167, 217);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox7.TabIndex = 24;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Location = new System.Drawing.Point(33, 217);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox8.TabIndex = 23;
+            this.pictureBox8.TabStop = false;
             // 
             // FirstLevel
             // 
@@ -199,28 +198,36 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::MemoryGame.Properties.Resources.pozadina;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(615, 372);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(572, 357);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblTimeLeft);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.HelpButton = true;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(621, 610);
-            this.MinimumSize = new System.Drawing.Size(621, 300);
+            this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "FirstLevel";
             this.Text = "2x4";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FirstLevel_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,14 +235,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label lblTimeLeft;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
@@ -244,6 +243,14 @@
         private System.Windows.Forms.ToolStripMenuItem новаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem крајToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem паузаToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
 
 
     }

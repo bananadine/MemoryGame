@@ -14,27 +14,29 @@ namespace MemoryGame
     {
         public bool isSelected { get; set; }
         public bool isGuessed { get; set; }
-        public Button button { get; set; }
-        public Image image { get; set; }
+        public PictureBox pictureBox { get; set; }
+        public Image image1 { get; set; }
+        public Image image2 { get; set; }
 
         public Frame() { }
-        public Frame(Button b, Image i, string tag)
+        public Frame(PictureBox pb, Image i1, Image i2, string tag)
         {
             isSelected = false;
             isGuessed = false;
-            button = b;
-            image = i;
-            image.Tag = tag;     
+            pictureBox = pb;
+            image1 = i1;
+            image2 = i2;
+            image1.Tag = tag;
         }
 
-        public void open(Graphics g)
+        public void open()
         {
-            button.Visible = false;
-            g.DrawImage(this.image, button.Location);
+            pictureBox.Image = this.image1;
         }
 
-        public void close() {
-            button.Visible = true;
+        public void close()
+        {
+            pictureBox.Image = this.image2;
         }
     }
 }

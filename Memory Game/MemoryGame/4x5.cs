@@ -16,41 +16,39 @@ namespace MemoryGame
     public partial class ThirdLevel : Form
     {
         private int timeElapsed, timeElapsed2, left;
-        private int hits;
-        private int opened;
+        private int hits, opened, wins;
         private static readonly int TIME = 120;
         List<Frame> frames = new List<Frame>();
-        private bool can, wrong;
-        private int wins = 0;
+        private bool canOpen, wrong;
 
         public ThirdLevel()
         {
             InitializeComponent();
             #region Initialize Frames and add to list
-            frames.Add(new Frame(this.button1, Properties.Resources.Arrow, "Arrow"));
-            frames.Add(new Frame(this.button2, Properties.Resources.Arrow, "Arrow"));
-            frames.Add(new Frame(this.button3, Properties.Resources.Bike, "Bike"));
-            frames.Add(new Frame(this.button4, Properties.Resources.Bike, "Bike"));
-            frames.Add(new Frame(this.button5, Properties.Resources.BlueCircle, "BlueCircle"));
-            frames.Add(new Frame(this.button6, Properties.Resources.BlueCircle, "BlueCircle"));
-            frames.Add(new Frame(this.button7, Properties.Resources.BrownSquare, "BrownSquare"));
-            frames.Add(new Frame(this.button8, Properties.Resources.BrownSquare, "BrownSquare"));
-            frames.Add(new Frame(this.button9, Properties.Resources.Diamond, "Diamond"));
-            frames.Add(new Frame(this.button10, Properties.Resources.Diamond, "Diamond"));
-            frames.Add(new Frame(this.button11, Properties.Resources.GreenTriangle, "GreenTriangle"));
-            frames.Add(new Frame(this.button12, Properties.Resources.GreenTriangle, "GreenTriangle"));
-            frames.Add(new Frame(this.button13, Properties.Resources.PurpleHeart, "PurpleHeart"));
-            frames.Add(new Frame(this.button14, Properties.Resources.PurpleHeart, "PurpleHeart"));
-            frames.Add(new Frame(this.button15, Properties.Resources.RedStar, "RedStar"));
-            frames.Add(new Frame(this.button16, Properties.Resources.RedStar, "RedStar"));
-            frames.Add(new Frame(this.button17, Properties.Resources.YingYang, "YingYang"));
-            frames.Add(new Frame(this.button18, Properties.Resources.YingYang, "YingYang"));
-            frames.Add(new Frame(this.button19, Properties.Resources.Cross, "Cross"));
-            frames.Add(new Frame(this.button20, Properties.Resources.Cross, "Cross"));
+            frames.Add(new Frame(this.pictureBox1, Properties.Resources.Arrow, Properties.Resources.QuestionMark, "Arrow"));
+            frames.Add(new Frame(this.pictureBox2, Properties.Resources.Arrow, Properties.Resources.QuestionMark, "Arrow"));
+            frames.Add(new Frame(this.pictureBox3, Properties.Resources.Bike, Properties.Resources.QuestionMark, "Bike"));
+            frames.Add(new Frame(this.pictureBox4, Properties.Resources.Bike, Properties.Resources.QuestionMark, "Bike"));
+            frames.Add(new Frame(this.pictureBox5, Properties.Resources.BlueCircle, Properties.Resources.QuestionMark, "BlueCircle"));
+            frames.Add(new Frame(this.pictureBox6, Properties.Resources.BlueCircle, Properties.Resources.QuestionMark, "BlueCircle"));
+            frames.Add(new Frame(this.pictureBox7, Properties.Resources.BrownSquare, Properties.Resources.QuestionMark, "BrownSquare"));
+            frames.Add(new Frame(this.pictureBox8, Properties.Resources.BrownSquare, Properties.Resources.QuestionMark, "BrownSquare"));
+            frames.Add(new Frame(this.pictureBox9, Properties.Resources.Diamond, Properties.Resources.QuestionMark, "Diamond"));
+            frames.Add(new Frame(this.pictureBox10, Properties.Resources.Diamond, Properties.Resources.QuestionMark, "Diamond"));
+            frames.Add(new Frame(this.pictureBox11, Properties.Resources.GreenTriangle, Properties.Resources.QuestionMark, "GreenTriangle"));
+            frames.Add(new Frame(this.pictureBox12, Properties.Resources.GreenTriangle, Properties.Resources.QuestionMark, "GreenTriangle"));
+            frames.Add(new Frame(this.pictureBox13, Properties.Resources.PurpleHeart, Properties.Resources.QuestionMark, "PurpleHeart"));
+            frames.Add(new Frame(this.pictureBox14, Properties.Resources.PurpleHeart, Properties.Resources.QuestionMark, "PurpleHeart"));
+            frames.Add(new Frame(this.pictureBox15, Properties.Resources.RedStar, Properties.Resources.QuestionMark, "RedStar"));
+            frames.Add(new Frame(this.pictureBox16, Properties.Resources.RedStar, Properties.Resources.QuestionMark, "RedStar"));
+            frames.Add(new Frame(this.pictureBox17, Properties.Resources.YingYang, Properties.Resources.QuestionMark, "YingYang"));
+            frames.Add(new Frame(this.pictureBox18, Properties.Resources.YingYang, Properties.Resources.QuestionMark, "YingYang"));
+            frames.Add(new Frame(this.pictureBox19, Properties.Resources.Cross, Properties.Resources.QuestionMark, "Cross"));
+            frames.Add(new Frame(this.pictureBox20, Properties.Resources.Cross, Properties.Resources.QuestionMark, "Cross"));
 
             foreach (Frame f in frames)
             {
-                f.button.Click += new System.EventHandler(this.click);
+                f.pictureBox.Click += new System.EventHandler(this.click);
             }
             opened = 0;
             #endregion
@@ -61,12 +59,20 @@ namespace MemoryGame
         {
             timer1.Start();
             timer2.Start();
+
+            canOpen = true;
+            wrong = false;
+            hits = 0;
+            opened = 0;
+            timeElapsed = 0;
+            timeElapsed2 = 0;
+            left = TIME;
+
             foreach (Frame f in frames)
             {
                 f.isSelected = false;
                 f.isGuessed = false;
-                f.button.Visible = true;
-                f.button.Enabled = false;
+                f.pictureBox.Enabled = false;
             }
 
 
@@ -74,55 +80,17 @@ namespace MemoryGame
 
             foreach (Frame f in frames)
             {
-                int index = r.Next(20);
+                int index = r.Next(8);
                 Frame temp = new Frame();
-                temp.button = f.button;
-                f.button = frames[index].button;
-                frames[index].button = temp.button;
+                temp.pictureBox = f.pictureBox;
+                f.pictureBox = frames[index].pictureBox;
+                frames[index].pictureBox = temp.pictureBox;
             }
 
-            foreach (Frame f in frames)
-            {
-                f.button.BackgroundImage = f.image;
-            }
-
-
-
-            can = true;
-            wrong = false;
-            hits = 0;
-            opened = 0;
-            timeElapsed = 0;
-            timeElapsed2 = 0;
             updateTime2();
             Invalidate();
         }
 
-        private void click(object sender, EventArgs e)
-        {
-            if (can == false) return;
-            Button tmp = sender as Button;
-            foreach (Frame f in frames)
-            {
-                if (f.button == tmp)
-                {
-                    if (opened == 0)
-                    {
-                        f.isSelected = true;
-                        opened++;
-                        Invalidate();
-                    }
-                    else if (opened == 1)
-                    {
-                        f.isSelected = true;
-                        opened = 0;
-                        can = false;
-                        Invalidate();
-                        validateGuess();
-                    }
-                }
-            }
-        }
 
         Frame first, second;
 
@@ -140,10 +108,13 @@ namespace MemoryGame
                         f1 = f;
                         tmp = false;
                     }
-                    else { f2 = f; }
+                    else
+                    {
+                        f2 = f;
+                    }
                 }
             }
-            if (f1.image.Tag == f2.image.Tag)
+            if (f1.image1.Tag == f2.image1.Tag)
             {
                 SoundPlayer sound = new SoundPlayer(Properties.Resources.pop);
                 sound.Play();
@@ -152,7 +123,7 @@ namespace MemoryGame
                 f1.isSelected = false;
                 f2.isSelected = false;
                 hits++;
-                can = true;
+                canOpen = true;
 
             }
             else
@@ -162,19 +133,19 @@ namespace MemoryGame
                 sound.Play();
                 first = f1;
                 second = f2;
-                Timer t1 = new Timer();
-                t1.Interval = 500;
-                t1.Tick += new EventHandler(t1_Tick);
-                t1.Start();
+                Timer closer = new Timer();
+                closer.Interval = 500;
+                closer.Tick += new EventHandler(closer_Tick);
+                closer.Start();
             }
         }
 
-        private void t1_Tick(object sender, EventArgs e)
+        private void closer_Tick(object sender, EventArgs e)
         {
             first.isSelected = false;
             second.isSelected = false;
+            canOpen = true;
 
-            can = true;
             ((Timer)sender).Stop();
         }
 
@@ -191,11 +162,13 @@ namespace MemoryGame
             timer1.Interval = 1000;
             timeElapsed++;
             updateTime();
+
             foreach (Frame f in frames)
             {
-                f.button.BackgroundImage = Properties.Resources.QuestionMark;
-                f.button.Enabled = true;
+                f.open();
+                f.pictureBox.Enabled = true;
             }
+
             if (timeElapsed == TIME || left < 0)
             {
                 timer1.Stop();
@@ -217,7 +190,7 @@ namespace MemoryGame
         {
             if (!wrong)
             {
-                left = TIME - timeElapsed;
+                int left = TIME - timeElapsed;
                 int min = left / 60;
                 int sec = left % 60;
                 lblTimeLeft.Text = string.Format("{0:00}:{1:00}", min, sec);
@@ -246,24 +219,11 @@ namespace MemoryGame
             int min = left / 60;
             int sec = left % 60;
             lblTimeLeft.Text = string.Format("{0:00}:{1:00}", min, sec);
-        }
-
-        private void ThirdLevel_Paint(object sender, PaintEventArgs e)
-        {
             foreach (Frame f in frames)
             {
-                    if (f.isSelected || f.isGuessed)
-                    {
-                        f.open(e.Graphics);
-                    }
-                    else
-                    {
-                        f.close();
-                    }
+                f.open();
             }
         }
-
-
 
         private void checkWin()
         {
@@ -274,7 +234,7 @@ namespace MemoryGame
                 SoundPlayer sound = new SoundPlayer(Properties.Resources.level_completed);
                 sound.Play();
                 MessageBox.Show("Честито! Победивте!", "Победа");
-               if (wins < 2)
+                if (wins < 2)
                 {
                     if (MessageBox.Show("Нова игра?", "Нова игра", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
                     {
@@ -282,7 +242,6 @@ namespace MemoryGame
                         timer1.Interval = 5000;
                         newGame();
                     }
-
                     else
                         Close();
                 }
@@ -294,7 +253,6 @@ namespace MemoryGame
                         form.Show();
                         Close();
                     }
-
                     else
                     {
                         if (MessageBox.Show("Нова игра?", "Нова игра", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
@@ -303,14 +261,56 @@ namespace MemoryGame
                             timer1.Interval = 5000;
                             newGame();
                         }
-
                         else
                             Close();
                     }
-
                 }
             }
+        }
 
+        private void click(object sender, EventArgs e)
+        {
+            if (canOpen == false) return;
+
+            else
+            {
+                PictureBox tmp = sender as PictureBox;
+                foreach (Frame f in frames)
+                {
+                    if (f.pictureBox == tmp)
+                    {
+                        if (opened == 0)
+                        {
+                            f.isSelected = true;
+                            opened++;
+                            Invalidate();
+                        }
+                        else if (opened == 1)
+                        {
+                            f.isSelected = true;
+                            opened = 0;
+                            canOpen = false;
+                            Invalidate();
+                            validateGuess();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void ThirdLevel_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Frame f in frames)
+            {
+                if (f.isSelected || f.isGuessed)
+                {
+                    f.open();
+                }
+                else if (!timer2.Enabled)
+                {
+                    f.close();
+                }
+            }
         }
 
         private void новаToolStripMenuItem_Click(object sender, EventArgs e)
